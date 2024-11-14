@@ -57,7 +57,7 @@ def encrypt_file(filename, key_filename):
     encrypted = object_key.encrypt(original)
     with open(f"{filename}.enc", 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
-    print(f"The file: {filename} was encrypted and saved as {filename}.enc") #f-string betyder att vi kan skriva in variabler i stra '{filename}' krypterades och sparades som '{filename}.enc'")
+    print(f"The file: {filename} was encrypted and saved as {filename}.enc") 
 
 def decrypt_file(filename, key_filename):   
 
