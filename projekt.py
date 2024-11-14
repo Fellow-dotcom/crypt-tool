@@ -1,5 +1,4 @@
 import argparse
-import cryptography
 from cryptography.fernet import Fernet
 import pyfiglet
 
