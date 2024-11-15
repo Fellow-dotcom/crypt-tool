@@ -27,10 +27,24 @@ print(bold_text, "\n\n")
 
 
 
-parser = argparse.ArgumentParser(description= "Cryptography tool")
-parser.add_argument("key_filename", type=str, help="Type the name of your new key")
-parser.add_argument("-o","--operation", choices= ["generate","encrypt","decrypt"], help="Choose operation: generate, encrypt or decrypt")
-parser.add_argument("-f","--filename", type= str,help="Provide the name of the file you wish to encrypt or decrypt, and name of the generated key (with .key as file extension)")
+parser = argparse.ArgumentParser(
+    description=(
+        "Cryptography tool \n\n"
+        "Observe: You can choose your own custom name for the key file instead of the following example: ultrasecret.key \n \n"
+        "Example commands: \n \n"
+        "Generate: python projekt.py -o generate ultrasecret \n \n"
+        "Encrypt: python projekt.py -o encrypt -f rockyou.txt ultrasecret.key \n \n"
+        "Decrypt: python project.py -o decrypt -f rockyou.txt.enc ultrasecret.key \n \n"
+        "Finally: remember to include the new file extensions that is added to the filename when decrypting \n \n"),
+formatter_class=argparse.RawDescriptionHelpFormatter)
+
+parser.add_argument("key_filename", type=str, help="Type the name of your new key without file extension")
+parser.add_argument("-o","--operation", choices= ["generate","encrypt","decrypt"],
+    help=
+        "Choose operation: generate, encrypt or decrypt")
+parser.add_argument("-f","--filename", type= str,
+    help=
+        "Provide the name of the file you wish to encrypt or decrypt, and name of the generated key (with .key as file extension)")
 args = parser.parse_args()
 
 
